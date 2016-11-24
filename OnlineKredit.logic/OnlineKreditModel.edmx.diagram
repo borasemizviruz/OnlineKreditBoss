@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Beschaeftigungsart" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Branche" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Einstellung" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.FamilienStandAngabe" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.FamilienStandAngabe" Width="1.875" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.FinanzielleSituation" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.IdentifikationsArt" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KontaktDaten" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
