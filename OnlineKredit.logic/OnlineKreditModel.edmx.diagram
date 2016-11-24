@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.IdentifikationsArt" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KontaktDaten" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KontoDaten" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KreditWunsch" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KreditWunsch" Width="1.5" PointX="4" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Kunde" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Land" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Ort" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />

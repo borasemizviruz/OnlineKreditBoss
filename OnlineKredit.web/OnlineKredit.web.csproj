@@ -121,9 +121,27 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KonsumKreditController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArbeitgeberModel.cs" />
+    <Compile Include="Models\BeschaeftigungsArtModel.cs" />
+    <Compile Include="Models\BildungsModel.cs" />
+    <Compile Include="Models\BrancheModel.cs" />
+    <Compile Include="Models\FamilienStandModel.cs" />
+    <Compile Include="Models\FinanzielleSituationModel.cs" />
+    <Compile Include="Models\IdentifikationsModel.cs" />
+    <Compile Include="Models\KontaktdatenModel.cs" />
+    <Compile Include="Models\KontoInformationenModel.cs" />
+    <Compile Include="Models\KreditRahmenModel.cs" />
+    <Compile Include="Models\NachschlageFeldModel.cs" />
+    <Compile Include="Models\PersönlicheDatenModel.cs" />
+    <Compile Include="Models\StaatsbuergerschaftsModel.cs" />
+    <Compile Include="Models\TitelModel.cs" />
+    <Compile Include="Models\TitelNachstehendModel.cs" />
+    <Compile Include="Models\WohnartModel.cs" />
+    <Compile Include="Models\ZusammenfassungModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -203,10 +221,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\KonsumKredit\KreditRahmen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
