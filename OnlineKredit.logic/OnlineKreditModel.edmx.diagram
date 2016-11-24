@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc7f41514060454d98a3d2f9c32f5c22" Name="Diagram1">
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Arbeitgeber" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Beschaeftigungsart" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Branche" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Einstellung" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.FamilienStandAngabe" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.FinanzielleSituation" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.IdentifikationsArt" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KontaktDaten" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KontoDaten" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.KreditWunsch" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Kunde" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Land" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Ort" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Schulabschluss" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Titel" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbOnlineKreditLAPModel.Wohnart" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblArbeit__FKBes__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblArbeit__FKBra__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblArbeit__IDArb__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKFami__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblFinanz__IDFin__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKIden__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKontak__FKOrt__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKontak__IDKon__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKontoD__IDKon__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKredit__IDKre__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKSchu__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKStaa__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKTite__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblKunde__FKWohn__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="dbOnlineKreditLAPModel.FK__tblOrt__FKLand__145C0A3F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
