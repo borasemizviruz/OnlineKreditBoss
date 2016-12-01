@@ -145,8 +145,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\chocolat.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\ion.rangeSlider.css" />
+    <Content Include="Content\css\ion.rangeSlider.skinHTML5.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\owl.carousel.css" />
@@ -171,14 +176,25 @@
     <Content Include="Content\img\team_1.jpg" />
     <Content Include="Content\img\testimonial_bg.jpg" />
     <Content Include="Content\js\appear.js" />
+    <Content Include="Content\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\js\bootstrap-select.js" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\easing.js" />
     <Content Include="Content\js\html5shiv.js" />
+    <Content Include="Content\js\ion.rangeSlider.js" />
+    <Content Include="Content\js\ion.rangeSlider.min.js" />
     <Content Include="Content\js\isotope.pkgd.min.js" />
+    <Content Include="Content\js\jquery-1.11.0.min.js" />
     <Content Include="Content\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\js\jquery.chocolat.js" />
     <Content Include="Content\js\jquery.counterup.min.js" />
     <Content Include="Content\js\jquery.easing.min.js" />
+    <Content Include="Content\js\jquery.hoverdir.js" />
     <Content Include="Content\js\jquery.nicescroll.min.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\modernizr.custom.97074.js" />
+    <Content Include="Content\js\moment-with-locales.min.js" />
+    <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
     <Content Include="Content\js\plugins.js" />
     <Content Include="Content\js\scrolling-nav.js" />
@@ -198,6 +214,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\img\.gitignore" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -206,6 +224,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -222,6 +242,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\KonsumKredit\KreditRahmen.cshtml" />
+    <Content Include="Views\KonsumKredit\PersönlicheDaten.cshtml" />
+    <Content Include="Views\KonsumKredit\FinanzielleSituation.cshtml" />
+    <Content Include="Views\KonsumKredit\Arbeitgeber.cshtml" />
+    <Content Include="Views\KonsumKredit\KontoInformationen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
