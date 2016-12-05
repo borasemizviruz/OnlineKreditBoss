@@ -350,6 +350,33 @@ namespace OnlineKredit.logic
             return alleTitel;
         }
 
+        public static List<Ort> OrteLaden()
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - OrteLaden");
+            Debug.Indent();
+
+            List<Ort> alleOrte = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    alleOrte = context.AlleOrte.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in OrteLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return alleOrte;
+        }
+
         public static bool PersönlicheDatenSpeichern(int? idTitel, string geschlecht, DateTime geburtsDatum, string vorname, string nachname, int? idTitelNachstehend, int idBildung, int idFamilienstand, int idIdentifikationsart, string identifikationsNummer, string idStaatsbuergerschaft, int idWohnart, int idKunde)
         {
             Debug.WriteLine("KonsumKreditVerwaltung - PersönlicheDatenSpeichern");
@@ -387,6 +414,51 @@ namespace OnlineKredit.logic
             catch (Exception ex)
             {
                 Debug.WriteLine("Fehler in PersönlicheDatenSpeichern");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return erfolgreich;
+        }
+
+        public static bool KontaktdatenSpeichern(int idOrt, string mail, string telefonnummer, string strasseNR, int idKunde)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - ArbeitgeberAngabenSpeichern");
+            Debug.Indent();
+
+            bool erfolgreich = false;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+
+                    /// speichere zum Kunden die Angaben
+                    Kunde aktKunde = context.AlleKunden.Where(x => x.ID == idKunde).FirstOrDefault();
+
+                    if (aktKunde != null)
+                    {
+                        KontaktDaten neueKontaktdaten = new KontaktDaten()
+                        {
+                            FKOrt = idOrt,
+                            EMail = mail,
+                            Telefonnummer = telefonnummer,
+                            StrasseNR = strasseNR
+                        };
+                        aktKunde.KontaktDaten = neueKontaktdaten;
+                    }
+
+                    int anzahlZeilenBetroffen = context.SaveChanges();
+                    erfolgreich = anzahlZeilenBetroffen >= 1;
+                    Debug.WriteLine($"{anzahlZeilenBetroffen} KontaktDaten gespeichert!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KontaktDatenSpeichern");
                 Debug.Indent();
                 Debug.WriteLine(ex.Message);
                 Debug.Unindent();
@@ -488,5 +560,8 @@ namespace OnlineKredit.logic
             Debug.Unindent();
             return erfolgreich;
         }
+
+
+        
     }
 }

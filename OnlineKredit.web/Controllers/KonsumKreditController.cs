@@ -194,6 +194,56 @@ namespace OnlineKredit.web.Controllers
             return View();
         }
 
+
+        [HttpGet]
+        public ActionResult Kontaktdaten()
+        {
+            Debug.WriteLine("GET - KonsumKredit - Kontaktdaten");
+
+            List<OrtModel> alleOrte = new List<OrtModel>();
+
+            foreach (var ort in KonsumKreditVerwaltung.OrteLaden())
+            {
+                alleOrte.Add(new OrtModel()
+                {
+                    ID = ort.ID.ToString(),
+                    Bezeichnung = ort.Bezeichnung
+                });
+            }
+
+            KontaktdatenModel model = new KontaktdatenModel()
+            {
+                AlleOrte = alleOrte,
+                ID_Kunde = int.Parse(Request.Cookies["idKunde"].Value)
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Kontaktdaten(KontaktdatenModel model)
+        {
+            Debug.WriteLine("POST - KonsumKredit - KontaktDaten");
+
+            if (ModelState.IsValid)
+            {
+                /// speichere Daten über BusinessLogic
+                if (KonsumKreditVerwaltung.KontaktdatenSpeichern(
+
+                                                model.ID_Ort,
+                                                model.StrasseNR,
+                                                model.Mail,
+                                                model.TelefonNummer,
+                                                model.ID_Kunde))
+                {
+                    return RedirectToAction("KontoInformationen");
+                }
+            }
+            return View();
+        }
+
+
         [HttpGet]
         public ActionResult Arbeitgeber()
         {
@@ -306,6 +356,9 @@ namespace OnlineKredit.web.Controllers
             Debug.WriteLine("POST - KonsumKredit - Zusammenfassung");
             return View();
         }
+
+
+        
     }
 
 }

@@ -135,9 +135,13 @@
     <Compile Include="Models\KontaktdatenModel.cs" />
     <Compile Include="Models\KontoInformationenModel.cs" />
     <Compile Include="Models\KreditRahmenModel.cs" />
+    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\NachschlageFeldModel.cs" />
+    <Compile Include="Models\OrtModel.cs" />
     <Compile Include="Models\PersönlicheDatenModel.cs" />
+    <Compile Include="Models\SrasseNRModel.cs" />
     <Compile Include="Models\StaatsbuergerschaftsModel.cs" />
+    <Compile Include="Models\TelefonNummerModel.cs" />
     <Compile Include="Models\TitelModel.cs" />
     <Compile Include="Models\TitelNachstehendModel.cs" />
     <Compile Include="Models\WohnartModel.cs" />
@@ -166,7 +170,7 @@
     <Content Include="Content\img\extended.jpg" />
     <Content Include="Content\img\flckr.jpg" />
     <Content Include="Content\img\happy_client.png" />
-    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo.gif" />
     <Content Include="Content\img\map-marker.png" />
     <Content Include="Content\img\pt_1.jpg" />
     <Content Include="Content\img\pt_2.jpg" />
@@ -202,6 +206,9 @@
     <Content Include="Content\js\vendor\jquery-1.11.3.min.js" />
     <Content Include="Content\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="Content\js\waypoints.min.js" />
+    <Content Include="Content\pics\HappyFamily.jpg" />
+    <Content Include="Content\pics\OnlineBanking.jpg" />
+    <Content Include="Content\pics\PiggyBankKid.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
@@ -246,6 +253,7 @@
     <Content Include="Views\KonsumKredit\FinanzielleSituation.cshtml" />
     <Content Include="Views\KonsumKredit\Arbeitgeber.cshtml" />
     <Content Include="Views\KonsumKredit\KontoInformationen.cshtml" />
+    <Content Include="Views\KonsumKredit\Kontaktdaten.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
