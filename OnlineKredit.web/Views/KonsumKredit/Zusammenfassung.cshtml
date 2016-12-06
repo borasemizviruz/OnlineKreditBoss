@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model OnlineKredit.web.Models.ZusammenfassungModel
+
+@{
+    ViewBag.Title = "Zusammenfassung";
+}
+
+<div id="content" style="margin-top: 20px">
+    <h2>Zusammenfassung</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ID_Kunde)  
+
+        <div class="form-horizontal">
+            <div class="row" style="margin-top: 20px">
+                <div class="col-lg-offset-4 col-md-offset-4 col-lg-6 col-md-6">
+                    Bitte überprüfen Sie die von Ihnen eingetragenen Daten auf Ihre Richtigkeit
+                    <br /><br />
+                    lorem ipsum et dolorem lorem ipsum et dolorem lorem ipsum et dolorem lorem ipsum et dolorem lorem ipsum et dolorem lorem ipsum et dolorem
+                </div>
+            </div>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.Geschlecht, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Titel, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.Vorname, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.Nachname, htmlAttributes: new { @class = "control-label" })
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_TitelNachstehend, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Bildung, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Familienstand, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Staatsbuergerschaft, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Wohnart, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.ID_Identifikationsart, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-lg-3 col-md-3" style="text-align: right">
+                    @Html.LabelFor(model => model.PersönlicheDaten.IdentifikationsNummer, htmlAttributes: new { @class = "control-label" })
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-4 col-md-offset-4 col-lg-3 col-md-3">
+
+                    <input type="submit" value="Bestätigen" class="btn btn-default" />
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

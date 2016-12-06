@@ -18,9 +18,7 @@ namespace OnlineKredit.logic
         public Nullable<int> FKOrt { get; set; }
         public string EMail { get; set; }
         public string Telefonnummer { get; set; }
-        public string Land { get; set; }
         public string StrasseNR { get; set; }
-        public string PLZ { get; set; }
     
         public virtual Ort Ort { get; set; }
         public virtual Kunde Kunde { get; set; }

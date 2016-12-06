@@ -188,7 +188,7 @@ namespace OnlineKredit.web.Controllers
                                                 model.ID_Wohnart,
                                                 model.ID_Kunde))
                 {
-                    return RedirectToAction("Arbeitgeber");
+                    return RedirectToAction("Kontaktdaten");
                 }
             }
             return View();
@@ -237,7 +237,7 @@ namespace OnlineKredit.web.Controllers
                                                 model.TelefonNummer,
                                                 model.ID_Kunde))
                 {
-                    return RedirectToAction("KontoInformationen");
+                    return RedirectToAction("Arbeitgeber");
                 }
             }
             return View();
