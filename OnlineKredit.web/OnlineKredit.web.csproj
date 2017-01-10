@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FreigabeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KonsumKreditController.cs" />
     <Compile Include="Global.asax.cs">
@@ -255,6 +256,7 @@
     <Content Include="Views\KonsumKredit\KontoInformationen.cshtml" />
     <Content Include="Views\KonsumKredit\Kontaktdaten.cshtml" />
     <Content Include="Views\KonsumKredit\Zusammenfassung.cshtml" />
+    <Content Include="Views\Freigabe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,6 +266,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineKredit.freigabe\OnlineKredit.freigabe.csproj">
+      <Project>{40c69a12-26b9-4a94-b274-883a80caf634}</Project>
+      <Name>OnlineKredit.freigabe</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineKredit.logic\OnlineKredit.logic.csproj">
       <Project>{1bd52f7e-f453-4f5b-a6db-09863fd0ce78}</Project>
       <Name>OnlineKredit.logic</Name>

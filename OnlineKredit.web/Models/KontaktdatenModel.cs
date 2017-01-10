@@ -16,6 +16,9 @@ namespace OnlineKredit.web.Models
         [Display(Name = "Ort")]
         public int ID_Ort { get; set; }
 
+        
+        public int ID_PLZ { get; set; }
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
         [Display(Name = "E-Mail")]
         public string Mail { get; set; }

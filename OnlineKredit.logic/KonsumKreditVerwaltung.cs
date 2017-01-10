@@ -561,7 +561,245 @@ namespace OnlineKredit.logic
             return erfolgreich;
         }
 
+        public static List<Kunde> KundenLaden()
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - KundenLaden");
+            Debug.Indent();
 
-        
+            List<Kunde> alleKunden = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    alleKunden = context.AlleKunden
+                        .Include("Arbeitgeber")
+                        .Include("Arbeitgeber.Beschaeftigungsart")
+                        .Include("Arbeitgeber.Branche")
+                        .Include("Familienstand")
+                        .Include("FinanzielleSituation")
+                        .Include("IdentifikationsArt")
+                        .Include("KontaktDaten")
+                        .Include("KontoDaten")
+                        .Include("KreditWunsch")
+                        .Include("Schulabschluss")
+                        .Include("Titel")
+                        .Include("TitelNachstehend")
+                        .Include("Wohnart")
+                        .Include("Staatsangehoerigkeit")
+                        .OrderByDescending(x => x.ID)
+                        .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KundenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return alleKunden;
+        }
+
+        public static List<Kunde> LetzteKundenLaden()
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - LetzteKundenLaden");
+            Debug.Indent();
+
+            List<Kunde> alleKunden = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    alleKunden = context.AlleKunden
+                        .Include("Arbeitgeber")
+                        .Include("Arbeitgeber.BeschaeftigungsArt")
+                        .Include("Arbeitgeber.Branche")
+                        .Include("Familienstand")
+                        .Include("FinanzielleSituation")
+                        .Include("IdentifikationsArt")
+                        .Include("KontaktDaten")
+                        .Include("KontoDaten")
+                        .Include("KreditWunsch")
+                        .Include("Schulabschluss")
+                        .Include("Titel")
+                        .Include("TitelNachstehend")
+                        .Include("Wohnart")
+                        .Include("Staatsangehoerigkeit")
+                        .OrderByDescending(x => x.ID)
+                        .Take(10)
+                        .ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in LetzteKundenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return alleKunden;
+        }
+
+        public static Kunde KundeLaden(int idKunde)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - KundeLaden");
+            Debug.Indent();
+
+            Kunde aktuellerKunde = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    aktuellerKunde = context.AlleKunden
+                        .Include("Arbeitgeber")
+                        .Include("Arbeitgeber.AlleBeschaeftigungsarten")
+                        .Include("Arbeitgeber.AlleBranchen")
+                        .Include("Familienstand")
+                        .Include("FinanzielleSituation")
+                        .Include("IdentifikationsArt")
+                        .Include("KontaktDaten")
+                        .Include("KontoDaten")
+                        .Include("KreditWunsch")
+                        .Include("Schulabschluss")
+                        .Include("Titel")
+                        .Include("Wohnart")
+                        .Include("Land")
+                        .Where(x => x.ID == idKunde).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KundeLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return aktuellerKunde;
+        }
+
+
+
+        /// <summary>
+        /// Lädt den Kunden für die übergebene ID
+        /// </summary>
+        /// <param name="id">die id des zu ladenden Kunden</param>
+        /// <returns>der Kunde für die übergebene ID</returns>
+        public static Kunde PersönlicheDatenLaden(int id)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - PersönlicheDatenLaden");
+            Debug.Indent();
+
+            Kunde persönlicheDaten = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    persönlicheDaten = context.AlleKunden.Where(x => x.ID == id).FirstOrDefault();
+                    Debug.WriteLine("PersönlicheDatenLaden geladen!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in PersönlicheDatenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return persönlicheDaten;
+        }
+
+
+        /// <summary>
+        /// Lädt den Kreditrahmen für die übergebene ID
+        /// </summary>
+        /// <param name="id">die id des zu ladenden Kreditrahmens</param>
+        /// <returns>der Kreditwunsch für die übergebene ID</returns>
+        public static Arbeitgeber ArbeitgeberAngabenLaden(int id)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - ArbeitgeberAngabenLaden");
+            Debug.Indent();
+
+            Arbeitgeber arbeitGeber = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    arbeitGeber = context.AlleArbeitgeber.Where(x => x.ID == id).FirstOrDefault();
+                    Debug.WriteLine("ArbeitgeberAngaben geladen!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in ArbeitgeberAngabenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return arbeitGeber;
+        }
+
+       
+
+        /// <summary>
+        /// Lädt die KontoDaten für die übergebene ID
+        /// </summary>
+        /// <param name="id">die id der zu ladenden KontoDaten</param>
+        /// <returns>die KontoDaten für die übergebene ID</returns>
+        public static KontoDaten KontoInformationenLaden(int id)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - KontoInformationenLaden");
+            Debug.Indent();
+
+            KontoDaten kontoDaten = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    kontoDaten = context.AlleKontoDaten.Where(x => x.ID == id).FirstOrDefault();
+                    Debug.WriteLine("KontoInformationen geladen!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KontoInformationenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return kontoDaten;
+        }
+
+        //public static void EntferneErsteZiffer()
+        //{
+        //    if (true)
+        //    {
+
+        //    }
+        //}
+
     }
 }

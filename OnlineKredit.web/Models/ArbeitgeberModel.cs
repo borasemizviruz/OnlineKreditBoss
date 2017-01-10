@@ -14,7 +14,7 @@ namespace OnlineKredit.web.Models
         public string FirmenName { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
-        [Display(Name = "Beschäftigungsart")]
+        [Display(Name = "Beschaeftigungsart")]
         public int ID_BeschäftigungsArt { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]

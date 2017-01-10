@@ -11,13 +11,13 @@ namespace OnlineKredit.web.Models
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
         [DataType(DataType.Currency, ErrorMessage = "Bitte eine Zahl eingeben")]
-        [Range(500, 10000, ErrorMessage = "Wert muss zwischen 500 und 10000 liegen")]
+        [Range(500, 1000000, ErrorMessage = "Wert muss zwischen 500 und 10000 liegen")]
         [Display(Name = "Netto-Einkommen (14x jährlich)")]
         public double NettoEinkommen { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
         [DataType(DataType.Currency, ErrorMessage = "Bitte eine Zahl eingeben")]
-        [Range(0, 10000, ErrorMessage = "Wert muss zwischen 0 und 10000 liegen")]
+        [Range(0, 200000, ErrorMessage = "Wert muss zwischen 0 und 10000 liegen")]
         [Display(Name = "Wohnkosten (Miete, Heizung, Strom)")]
         public double Wohnkosten { get; set; }
 
@@ -42,5 +42,16 @@ namespace OnlineKredit.web.Models
         [HiddenInput(DisplayValue = false)]
         [Required]
         public int ID_Kunde { get; set; } 
+
+        public FinanzielleSituationModel()
+        {
+            EinkünfteAlimenteUnterhalt = 0;
+
+            UnterhaltsZahlungen = 0;
+
+            RatenVerpflichtungen = 0;
+        }
+
+        
     }
 }

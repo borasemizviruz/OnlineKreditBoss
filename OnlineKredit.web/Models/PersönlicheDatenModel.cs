@@ -21,10 +21,12 @@ namespace OnlineKredit.web.Models
         public Geschlecht Geschlecht { get; set; }
 
         [Required]
+        [DataType(DataType.Currency, ErrorMessage = "Bitte geben Sie Ihren Vornamen ein.")]
         [StringLength(50, ErrorMessage = "max. 50 Zeichen")]
         public string Vorname { get; set; }
 
         [Required]
+        [DataType(DataType.Currency, ErrorMessage = "Bitte geben Sie Ihren Nachnamen ein.")]
         [StringLength(50, ErrorMessage = "max. 50 Zeichen")]
         public string Nachname { get; set; }
 
@@ -34,6 +36,7 @@ namespace OnlineKredit.web.Models
         [Display(Name = "Titel (nachstehend)")]
         public int? ID_TitelNachstehend { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime GeburtsDatum { get; set; }
 

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineKredit.web", "OnlineK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineKredit.logic", "OnlineKredit.logic\OnlineKredit.logic.csproj", "{1BD52F7E-F453-4F5B-A6DB-09863FD0CE78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineKredit.freigabe", "OnlineKredit.freigabe\OnlineKredit.freigabe.csproj", "{40C69A12-26B9-4A94-B274-883A80CAF634}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1BD52F7E-F453-4F5B-A6DB-09863FD0CE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD52F7E-F453-4F5B-A6DB-09863FD0CE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD52F7E-F453-4F5B-A6DB-09863FD0CE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C69A12-26B9-4A94-B274-883A80CAF634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C69A12-26B9-4A94-B274-883A80CAF634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C69A12-26B9-4A94-B274-883A80CAF634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C69A12-26B9-4A94-B274-883A80CAF634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
