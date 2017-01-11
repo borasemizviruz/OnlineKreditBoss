@@ -370,6 +370,7 @@ namespace OnlineKredit.web.Controllers
             /// lädt ALLE Daten zu diesem Kunden (also auch die angehängten/referenzierten
             /// Entities) aus der DB
             Kunde aktKunde = KonsumKreditVerwaltung.KundeLaden(model.ID_Kunde);
+            Ort aktOrt = KonsumKreditVerwaltung.KundenOrtLaden(model.ID_Kunde);
 
             model.GewünschterBetrag = (int)aktKunde.KreditWunsch.Betrag.Value;
             model.Laufzeit = aktKunde.KreditWunsch.Laufzeit.Value;
@@ -400,7 +401,8 @@ namespace OnlineKredit.web.Controllers
             model.BeschäftigtSeit = aktKunde.Arbeitgeber?.BeschaeftigtSeit.Value.ToShortDateString();
 
             model.Strasse = aktKunde.KontaktDaten?.StrasseNR;
-            //model.Ort = aktKunde.KontaktDaten?.Ort?.PLZ;
+            model.Ort = aktOrt.Bezeichnung;
+            model.PLZ = aktOrt.PLZ;
             model.Mail = aktKunde.KontaktDaten?.EMail;
             model.TelefonNummer = aktKunde.KontaktDaten?.Telefonnummer;
 

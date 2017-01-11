@@ -10,6 +10,7 @@ namespace OnlineKredit.web.Models
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
         [StringLength(30, ErrorMessage = "max. 30 Zeichen erlaubt")]
+        [DataType(DataType.Text, ErrorMessage = "Bitte geben Sie keine Sonderzeichen ein")]
         [Display(Name = "Firmen-Name")]
         public string FirmenName { get; set; }
 

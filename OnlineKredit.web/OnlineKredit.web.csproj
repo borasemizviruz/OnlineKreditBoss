@@ -140,6 +140,7 @@
     <Compile Include="Models\NachschlageFeldModel.cs" />
     <Compile Include="Models\OrtModel.cs" />
     <Compile Include="Models\PersönlicheDatenModel.cs" />
+    <Compile Include="Models\PLZModel.cs" />
     <Compile Include="Models\SrasseNRModel.cs" />
     <Compile Include="Models\StaatsbuergerschaftsModel.cs" />
     <Compile Include="Models\TelefonNummerModel.cs" />

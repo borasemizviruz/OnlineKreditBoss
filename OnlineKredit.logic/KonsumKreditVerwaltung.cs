@@ -666,6 +666,7 @@ namespace OnlineKredit.logic
                         .Include("Familienstand")
                         .Include("FinanzielleSituation")
                         .Include("IdentifikationsArt")
+                        .Include("KontaktDaten.Ort")
                         .Include("KontaktDaten")
                         .Include("KontoDaten")
                         .Include("KreditWunsch")
@@ -793,6 +794,36 @@ namespace OnlineKredit.logic
             return kontoDaten;
         }
 
+        public static Ort KundenOrtLaden(int id)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - KundenOrtLaden");
+            Debug.Indent();
+
+            Ort Ort = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    Ort = context.AlleOrte.Where(x => x.ID == id).FirstOrDefault();
+                    Debug.WriteLine("KundenOrtLaden geladen!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KundenOrtLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return Ort;
+        }
+
+
+
         //public static void EntferneErsteZiffer()
         //{
         //    if (true)
@@ -800,6 +831,7 @@ namespace OnlineKredit.logic
 
         //    }
         //}
+
 
     }
 }
