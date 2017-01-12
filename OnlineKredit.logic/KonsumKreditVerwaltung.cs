@@ -377,6 +377,61 @@ namespace OnlineKredit.logic
             return alleOrte;
         }
 
+
+        public static List<Ort> OrtLaden()
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - TitelLaden");
+            Debug.Indent();
+
+            List<Ort> alleOrte = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    alleOrte = context.AlleOrte.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in TitelLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return alleOrte;
+        }
+
+        //public static List<PLZ> PLZLaden()
+        //{
+        //    Debug.WriteLine("KonsumKreditVerwaltung - PLZLaden");
+        //    Debug.Indent();
+
+        //    List<PLZ> allePLZ = null;
+
+        //    try
+        //    {
+        //        using (var context = new dbOnlineKreditLAPEntities1())
+        //        {
+        //            allePLZ = context.PLZ.ToList();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine("Fehler in PLZLaden");
+        //        Debug.Indent();
+        //        Debug.WriteLine(ex.Message);
+        //        Debug.Unindent();
+        //        Debugger.Break();
+        //    }
+
+        //    Debug.Unindent();
+        //    return allePLZ;
+        //}
+
         public static bool PersönlicheDatenSpeichern(int? idTitel, string geschlecht, DateTime geburtsDatum, string vorname, string nachname, int? idTitelNachstehend, int idBildung, int idFamilienstand, int idIdentifikationsart, string identifikationsNummer, string idStaatsbuergerschaft, int idWohnart, int idKunde)
         {
             Debug.WriteLine("KonsumKreditVerwaltung - PersönlicheDatenSpeichern");
@@ -424,7 +479,7 @@ namespace OnlineKredit.logic
             return erfolgreich;
         }
 
-        public static bool KontaktdatenSpeichern(int idOrt, string mail, string telefonnummer, string strasseNR, int idKunde)
+        public static bool KontaktdatenSpeichern(int idOrt, string idPLZ, string mail, string telefonnummer, string strasseNR, int idKunde)
         {
             Debug.WriteLine("KonsumKreditVerwaltung - ArbeitgeberAngabenSpeichern");
             Debug.Indent();
@@ -444,11 +499,24 @@ namespace OnlineKredit.logic
                         KontaktDaten neueKontaktdaten = new KontaktDaten()
                         {
                             FKOrt = idOrt,
+                            //PLZ = idPLZ,
                             EMail = mail,
                             Telefonnummer = telefonnummer,
                             StrasseNR = strasseNR
                         };
                         aktKunde.KontaktDaten = neueKontaktdaten;
+                    }
+
+                    Ort aktOrt = context.AlleOrte.Where(x => x.ID == idKunde).FirstOrDefault();
+
+                    if (aktOrt != null)
+                    {
+                        Ort neueOrtdaten = new Ort()
+                        {
+                            PLZ = idPLZ
+
+                        };
+                        aktOrt = neueOrtdaten;
                     }
 
                     int anzahlZeilenBetroffen = context.SaveChanges();
@@ -831,6 +899,35 @@ namespace OnlineKredit.logic
 
         //    }
         //}
+
+
+        public static KontaktDaten KontaktDatenLaden(int id)
+        {
+            Debug.WriteLine("KonsumKreditVerwaltung - KontoInformationenLaden");
+            Debug.Indent();
+
+            KontaktDaten kontaktDaten = null;
+
+            try
+            {
+                using (var context = new dbOnlineKreditLAPEntities1())
+                {
+                    kontaktDaten = context.AlleKontaktDaten.Where(x => x.ID == id).FirstOrDefault();
+                    Debug.WriteLine("KontaktDaten geladen!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fehler in KontaktDatenLaden");
+                Debug.Indent();
+                Debug.WriteLine(ex.Message);
+                Debug.Unindent();
+                Debugger.Break();
+            }
+
+            Debug.Unindent();
+            return kontaktDaten;
+        }
 
 
     }

@@ -148,7 +148,16 @@ namespace OnlineKredit.web.Controllers
                     Bezeichnung = wohnart.Bezeichnung
                 });
             }
-            
+            //foreach (var PLZ in KonsumKreditVerwaltung.PLZLaden())
+            //{
+            //    alleBildungsAngaben.Add(new BildungsModel()
+            //    {
+            //        ID = PLZ.ID.ToString(),
+            //        Bezeichnung = PLZ.Bezeichnung
+            //    });
+            //}
+
+
 
 
             PersönlicheDatenModel model = new PersönlicheDatenModel()
@@ -208,6 +217,7 @@ namespace OnlineKredit.web.Controllers
                 alleOrte.Add(new OrtModel()
                 {
                     ID = ort.ID.ToString(),
+                    PLZ = ort.PLZ,
                     Bezeichnung = ort.Bezeichnung
                 });
             }
@@ -215,7 +225,7 @@ namespace OnlineKredit.web.Controllers
             KontaktdatenModel model = new KontaktdatenModel()
             {
                 AlleOrte = alleOrte,
-                ID_Kunde = int.Parse(Request.Cookies["idKunde"].Value)
+                ID_Kunde = int.Parse(Request.Cookies["idKunde"].Value),
             };
 
             return View(model);
@@ -233,7 +243,8 @@ namespace OnlineKredit.web.Controllers
                 if (KonsumKreditVerwaltung.KontaktdatenSpeichern(
 
                                                 model.ID_Ort,
-                                                model.StrasseNR,
+                                                model.PLZ,
+                                                model.StrasseNR,                                                
                                                 model.Mail,
                                                 model.TelefonNummer,
                                                 model.ID_Kunde))

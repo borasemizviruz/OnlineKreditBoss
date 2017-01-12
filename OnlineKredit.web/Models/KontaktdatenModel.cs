@@ -15,10 +15,10 @@ namespace OnlineKredit.web.Models
         public string StrasseNR { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
-        [Display(Name = "Ort")]
+        [Display(Name = "PLZ, Ort")]
         public int ID_Ort { get; set; }
    
-        public int ID_PLZ { get; set; }
+        public string PLZ { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Bitte geben Sie Ihre Email-Adresse an")]
@@ -30,6 +30,8 @@ namespace OnlineKredit.web.Models
         public string TelefonNummer { get; set; }
 
         public List<OrtModel> AlleOrte { get; set; }
+
+        public string OrtundPLZ { get; set; }
 
         public int ID_Kunde { get; set; }
     }

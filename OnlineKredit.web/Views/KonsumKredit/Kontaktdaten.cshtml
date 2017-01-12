@@ -40,7 +40,7 @@
                     @Html.LabelFor(model => model.ID_Ort, htmlAttributes: new { @class = "control-label" })
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    @Html.DropDownListFor(model => model.ID_Ort, new SelectList(Model.AlleOrte, "ID", "Bezeichnung"))
+                    @Html.DropDownListFor(model => model.ID_Ort, new SelectList(Model.AlleOrte, "ID", "Anzeige" ), "Bitte wählen", htmlAttributes: new { @class = "dropDownOrtLand form-control" })
                     @Html.ValidationMessageFor(model => model.ID_Ort, "", new { @class = "text-danger" })
                 </div>
             </div>
