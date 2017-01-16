@@ -21,12 +21,12 @@ namespace OnlineKredit.web.Models
         public Geschlecht Geschlecht { get; set; }
 
         [Required]
-        [DataType(DataType.Currency, ErrorMessage = "Bitte geben Sie Ihren Vornamen ein.")]
+        [RegularExpression(@"^[A-Z a-z -]+$", ErrorMessage = "Bitte geben Sie Ihren Vornamen ein.")]
         [StringLength(50, ErrorMessage = "max. 50 Zeichen")]
         public string Vorname { get; set; }
 
         [Required]
-        [DataType(DataType.Currency, ErrorMessage = "Bitte geben Sie Ihren Nachnamen ein.")]
+        [RegularExpression(@"^[A-Z a-z -]+$", ErrorMessage = "Bitte geben Sie Ihren Nachnamen ein.")]
         [StringLength(50, ErrorMessage = "max. 50 Zeichen")]
         public string Nachname { get; set; }
 

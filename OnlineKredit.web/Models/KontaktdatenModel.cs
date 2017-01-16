@@ -10,7 +10,7 @@ namespace OnlineKredit.web.Models
     public class KontaktdatenModel
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
-        [DataType(DataType.Text, ErrorMessage = "Bitte geben Sie keine Sonderzeichen ein")]
+        [RegularExpression(@"^[\w*]+[\s]+([\d\w-]*)+([/]?)+([\s]?)+([\d\w-]*)+([/]?)+([\s]?)+([\d\w-]*)$", ErrorMessage = "Bitte geben Sie Ihre Adresse ein.")]
         [Display(Name = "Straße/Hausnummer")]
         public string StrasseNR { get; set; }
 
@@ -21,11 +21,13 @@ namespace OnlineKredit.web.Models
         public string PLZ { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Bitte geben Sie Ihre Email-Adresse an")]
+        //[DataType(DataType.EmailAddress, ErrorMessage = "Bitte geben Sie Ihre Email-Adresse an")]
+        [EmailAddress]
         [Display(Name = "E-Mail")]
         public string Mail { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Pflichtfeld")]
+        [RegularExpression(@"^[+ 0-9 /]+$", ErrorMessage = "Bitte geben Sie Ihre Telefonnummer ein.")]
         [Display(Name = "Telefonnummer")]
         public string TelefonNummer { get; set; }
 

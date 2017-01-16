@@ -24,7 +24,7 @@ namespace OnlineKredit.web.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, ConvertEmptyStringToNull = true, DataFormatString = "MM.yyyy")]
-        [Display(Name = "beschäftigt seit")]
+        [Display(Name = "beschäftigt seit")]        
         public string BeschäftigtSeit { get; set; }
 
         public List<BeschaeftigungsArtModel> AlleBeschaeftigungen { get; set; }
